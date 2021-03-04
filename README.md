@@ -1,5 +1,3 @@
-# Face-Mask-Recognition-Model-using-Python
-## 
 # Neural Networks Project--
 # Real Time Face-Mask-Recognition-Model using a Web Interface in Python
 
