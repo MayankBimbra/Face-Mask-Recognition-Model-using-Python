@@ -1,4 +1,4 @@
-# Neural Networks Project--
+# Neural Networks & Deep Learning Project--
 # Real Time Face-Mask-Recognition-Model using a Web Interface in Python
 
 # Description
