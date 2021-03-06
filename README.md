@@ -9,27 +9,23 @@ This project consists of three steps:
 3. Return an annotated model with the predictions
 
 # Problem
-#### For any real time image taken from our web camera, our goal is to predict the expression of the face in that image out of seven basic human expression.
- i.e. CLASSIFY THE EXPRESSION OF FACE IN IMAGE OUT OF SEVEN BASIC HUMAN EXPRESSION
+#### For any real time image taken from our web camera, our goal is to predict that the person is wearing a Face Mask or not.
+ i.e. CLASSIFY WHETHER THE PERSON IS WEARING A MASK OR NOT. 
 # Project Formulation
 
-The hands on building this project of Facial Expression Recognition is divided into following tasks/steps:-
+The hands on building this project of Face Mask Recognition Model is divided into following tasks/steps:-
 
 #### A.	Task 1: Introduction 
 •	Introduction to the dataset
 
-•	Import essential modules and helper functions from NumPy, Matplotlib, and Keras.
+•	Import essential modules and helper dependencies.
 
 #### B.	Task 2: Exploring the Dataset
-•	Display some images from every expression type in the Emotion FER dataset.
 
 #### C.	Task 3: Generating Training and Validation Batches
-•	Generate batches of tensor image data with real-time data augmentation.
-
-•	Specify paths to training and validation image directories and generates batches of augmented data.
 
 #### D.	Task 4: Creating a Convolutional Neural Network (CNN) Model
-•	Design a convolutional neural network with 4 convolution layers and 2 fully connected layers to predict 7 types of facial expressions.
+•	Design a convolutional neural network with 4 convolution layers and 2 fully connected layers to predict.
 
 •	Used Adam as the optimizer, categorical crossentropy as the loss function, and accuracy as the evaluation metric.
 
@@ -43,45 +39,34 @@ The hands on building this project of Facial Expression Recognition is divided i
 #### F.	Task 6: Saving and Serializing Model as JSON String
 •	Used to_json(), which uses a JSON string, to store the model architecture.
 
-#### G.	Task 7: Creating a Flask App to Serve Predictions
-•	We used the open-source code from "Video Streaming with Flask Example" to create a flask app to serve the model's prediction images directly to a web interface.
+#### G.	Task 7: Creating a Frame to Serve Predictions
 
 #### H.	Task 8: Creating a Class to Output Model Predictions
-•	Created a FacialExpressionModel class to load the model from the JSON file, load the trained weights into the model, and predict facial expressions.
 
-#### I.	Task 9: Designed an HTML Template for the Flask App
-•	Designed a basic template in HTML to create the layout for the Flask app.
+#### I.	Task 10: Used Model to Recognize Face Mask on not at the Real Time using laptops webcamera
+•	We than run the main.py script to create the Frame and serve the model's predictions to a web interface.
 
-#### J.	Task 10: Used Model to Recognize Facial Expressions at the Real Time using laptops webcamera
-•	We than run the main.py script to create the Flask app and serve the model's predictions to a web interface.
-
-•	Applied the model for real time recognition of facial expresssions of users using webcam of the Laptop.
+•	Applied the model for real time recognition of Face Mask of users using webcam of the Laptop.
 
 
 # Dataset Description
 Downloadable Link - https://drive.google.com/drive/folders/1Dm2sV8UrMd6OKzjVkW859WznhfSXFZF8
-The dataset used in this project work has been taken from the Kaggle.com. The data consists of 48x48 pixel grayscale images of faces. The faces have been automatically registered so that the face is more or less centered and occupies about the same amount of space in each image. The task is to categorize each face based on the emotion shown in the facial expression in to one of seven categories (0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral).
-train.csv contains two columns, "emotion" and "pixels". The "emotion" column contains a numeric code ranging from 0 to 6, inclusive, for the emotion that is present in the image. The "pixels" column contains a string surrounded in quotes for each image. The contents of this string a space-separated pixel values in row major order. test.csv contains only the "pixels" column and your task is to predict the emotion column.
+The dataset used in this project work has been taken from the Kaggle.com i.e. a Faces dataset(with/without mask Dataset).
 
-The training set consists of 28,709 examples. The public test set used for the leaderboard consists of 3,589 examples. The final test set, which was used to determine the winner of the competition, consists of another 3,589 examples.
+The dataset consists of 3,833 images belonging to two classes:
+with_mask: 1915 images
+without_mask: 1918 images
 
 # Prerequisites
 You need to have installed following softwares and libraries in your machine before running this project.
 
-1.Python 3
-
-2.Anaconda: It will install jupyter notebook and most of the libraries which are needed like sklearn, pandas, seaborn, matplotlib, numpy, PIL.
-
-3.OpenCV
-
-4.keras
-
-# Project Structure 
-1. Locating faces in the scene 
-
-2. Extracting facial features from the detected face region 
-
-3. Analyzing the motion of facial features and/or the changes in the appearance of facial features 
+1. tensorflow>=1.15.2
+2. keras==2.3.1
+3. imutils==0.5.3
+4. numpy==1.18.2
+5. opencv-python==4.2.0.*
+6. matplotlib==3.2.1
+7. scipy==1.4.1
 
 # Steps followed for building the project
 
@@ -93,14 +78,12 @@ ii.) Face registration- Face Registration is a computer technology being used in
 
 iii.) Facial feature extraction- Facial Features extraction is an important step in face recognition and is defined as the process of locating specific regions, points, landmarks, or curves/contours in a given 2-D image or a 3D range image.  
 
-iv.) Emotion classification- In this step, of classification, the algorithm attempts to classify the given faces portraying one of the seven basic emotions.
+iv.) Applying Face Mask Detector Model.
 
 # Conclusion
-Therefore by following these steps, in this project a Emotion/Facial Recognition model has been trained and saved. It can recognize/detect the facial expressions of an individual on a real time basis that whether the individual is  Neutral, Angry, Disgust, Fear, Happy, Sad, Surprised.
+To mitigate the spread of COVID-19 pandemic, measures must be taken. I have modeled a face mask detector using learning methods in neural networks. To train, validate and test the model, I used the dataset that consisted of 1915 masked faces images and 1918 unmasked faces images. These images were taken from various resources like Kaggle and RMFD datasets. The model was inferred on images and live video streams.
+To select a base model, we evaluated the metrics like accuracy, precision and recall and selected MobileNetV2 architecture with the best performance having 100% precision and 99% recall. It is also computationally efficient using MobileNetV2 which makes it easier to install the model to embedded systems.
+This face mask detector can be deployed in many areas like shopping malls, airports and other heavy traffic places to monitor the public and to avoid the spread of the disease by checking who is following basic rules and who is not.
 
 # Author
 Mayank Bimbra
-
-
-
-
