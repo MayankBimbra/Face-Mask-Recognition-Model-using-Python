@@ -34,8 +34,6 @@ The hands on building this project of Face Mask Recognition Model is divided int
 
 •	Used ModelCheckpoint() to save the weights associated with the higher validation accuracy.
 
-•	Observed live training loss and accuracy plots in Jupyter Notebook for Keras.
-
 #### F.	Task 6: Saving and Serializing Model as JSON String
 •	Used to_json(), which uses a JSON string, to store the model architecture.
 
